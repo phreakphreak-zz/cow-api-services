@@ -1,5 +1,5 @@
 const accelerometerController = {};
-const Accelerometer = require("./acceleromter.model");
+const Accelerometer = require("./model");
 
 accelerometerController.getData = async (req, res, next) => {
 
