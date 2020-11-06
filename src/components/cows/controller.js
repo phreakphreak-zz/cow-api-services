@@ -1,5 +1,5 @@
 const cowsController = {};
-const Cow = require("./cows.model");
+const Cow = require("./model");
 
 cowsController.getCows = async (req, res, next) => {
   try {

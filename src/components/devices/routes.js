@@ -3,7 +3,7 @@ const router = Router();
 const {
   createDevice,
   getDevices,
-} = require("./devices.controller");
+} = require("./controller");
 
 router.get("/", getDevices);
 
@@ -17,9 +17,18 @@ router.put("/:id");
 
 router.delete("/:id");
 
-router.post("/accelerometer");
+router.post("/accelerometer", (req,res,next)=>{
+  const {id,data}= req.body;
+  console.log(id,data);
+  res.json("ok");
+
+});
 
 
-router.post("/thermometer");
+router.post("/thermometer", (req,res,next)=>{
+  const {id,data}= req.body;
+  console.log(id,data);
+  res.json("ok");
+});
 
 module.exports = router;

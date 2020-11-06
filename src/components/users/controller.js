@@ -1,5 +1,5 @@
 const userController = {};
-const User = require("./users.model");
+const User = require("./model");
 const jwt = require("jsonwebtoken");
 
 

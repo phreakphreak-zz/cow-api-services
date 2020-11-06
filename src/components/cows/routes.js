@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const {getCows,createCow,deleteCow} = require("./cows.controller");
+const {getCows,createCow,deleteCow} = require("./controller");
 
 router.get("/",getCows);
 

@@ -1,10 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const {
-  getUsers,
-  createUser,
-  profileUser,
-} = require("./users.controller");
+const { getUsers, createUser, profileUser } = require("./controller");
 
 router.get("/");
 
@@ -18,6 +14,6 @@ router.put("/:id");
 
 router.delete("/:id");
 
-router.patch("/:id")
+router.patch("/:id");
 
 module.exports = router;
