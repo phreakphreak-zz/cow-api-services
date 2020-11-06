@@ -1,9 +1,10 @@
-const Accelerometer = require("./acceleromter.model");
 const accelerometerController = {};
+const Accelerometer = require("./acceleromter.model");
 
 accelerometerController.getData = async (req, res, next) => {
+
   const data = await Accelerometer.find();
-  res.json({ data: data });
+  res.json(data);
 };
 
 accelerometerController.setData = async (req, res, next) => {
@@ -21,22 +22,21 @@ accelerometerController.setData = async (req, res, next) => {
 
   const newAccelerometer = new Accelerometer({
     data: {
-      deviceId,
+      deviceId:deviceId,
       values: {
-        x,
-        y,
-        z,
-        pitch,
-        roll,
-        inclination,
-        orientation,
-        acceleration,
+        x:x,
+        y:y,
+        z:z,
+        pitch:pitch,
+        roll:roll,
+        inclination:inclination,
+        orientation:orientation,
+        acceleration:acceleration,
       },
     },
   });
 
   await newAccelerometer.save();
-  next();
   res.json("ok");
 };
 

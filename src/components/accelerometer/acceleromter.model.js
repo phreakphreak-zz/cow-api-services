@@ -1,17 +1,15 @@
 const { Schema, model } = require("mongoose");
-const accelerometerShema = new Schema(
+
+
+const accelerometerSchema = new Schema(
   {
     data: {
-      deviceId: Number,
+      deviceId: {
+        type:String
+      },
       values: {
-        x: Number,
-        y: Number,
-        z: Number,
-        pitch: Number,
-        roll: Number,
-        inclination: Number,
-        orientation: Number,
-        acceleration: Number,
+        type:Map,
+        of:Number,
       },
     },
   },
@@ -20,4 +18,5 @@ const accelerometerShema = new Schema(
   }
 );
 
-module.exports = model("Accelerometer", accelerometerShema);
+
+module.exports = model("Accelerometer", accelerometerSchema);
