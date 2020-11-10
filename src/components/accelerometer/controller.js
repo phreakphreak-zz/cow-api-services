@@ -9,8 +9,9 @@ accelerometerController.getData = async (req, res, next) => {
 accelerometerController.getDataById = async (req, res, next) => {
 
   const id = req.params.id;
+  console.log(id);
   const data = await Accelerometer.find({
-    data: { deviceId: id}
+    "data.deviceId" : id
   });
 
   res.json(data);
