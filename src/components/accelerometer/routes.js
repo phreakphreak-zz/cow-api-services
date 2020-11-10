@@ -9,6 +9,6 @@ router.get("/", getData);
 router.post("/", setData);
 
 
-routerr.get("/:id",getDataById);
+router.get("/:id",getDataById);
 
 module.exports = router;
