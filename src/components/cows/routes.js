@@ -8,6 +8,7 @@ router.get("/", getCows);
 
 router.post("/", createCow);
 
+
 router.get("/:id");
 
 router.put("/:id");
@@ -16,4 +17,11 @@ router.delete("/:id", deleteCow);
 
 router.patch("/:id");
 
+
+//health
+router.get("/health")
+
+
+//health
 module.exports = router;
+
