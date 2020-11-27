@@ -1,15 +1,14 @@
 const { Schema, model } = require("mongoose");
 
-
 const accelerometerSchema = new Schema(
   {
     data: {
       deviceId: {
-        type:String
+        type: String,
       },
       values: {
-        type:Map,
-        of:Number,
+        type: Map,
+        of: Number,
       },
     },
   },
@@ -17,6 +16,5 @@ const accelerometerSchema = new Schema(
     timestamps: true,
   }
 );
-
 
 module.exports = model("Accelerometer", accelerometerSchema);
