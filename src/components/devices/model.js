@@ -1,6 +1,10 @@
 const { Schema, model } = require("mongoose");
 const deviceSchema = new Schema(
   {
+    number: {
+      type: Number,
+      default: 0,
+    },
     board: String,
     moduleWifi: String,
     macAddress: String,
@@ -13,8 +17,4 @@ const deviceSchema = new Schema(
   }
 );
 
-
-
 module.exports.Device = model("Device", deviceSchema);
-
-

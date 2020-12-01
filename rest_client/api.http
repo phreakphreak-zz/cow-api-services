@@ -1,0 +1,57 @@
+###
+GET https://cow-api-services.herokuapp.com/api/devices HTTP/1.1
+
+###
+GET https://cow-api-services.herokuapp.com/api/accelerometer HTTP/1.1
+
+###
+GET https://cow-api-services.herokuapp.com/api/accelerometer/5fa45c8f0abd0a30caa181af HTTP/1.1
+
+###
+
+POST https://cow-api-services.herokuapp.com/api/accelerometer HTTP/1.1
+content-type: application/json
+
+{
+    "x":"1",
+    "y":"1",
+    "z":"1",
+    "pitch":"1",
+    "roll":"1",
+    "inclination":"1",
+    "orientation":"1",
+    "acceleration":"1",
+    "deviceId":"5fa45c8f0abd0a30caa181af"
+}
+
+###
+GET https://cow-api-services.herokuapp.com/api/gyro HTTP/1.1
+
+###
+POST https://cow-api-services.herokuapp.com/api/gyro HTTP/1.1
+content-type: application/json
+
+{
+    "x":1,
+    "y":1,
+    "z":1,
+    "pitch":1,
+    "roll":1,
+    "yaw":1,
+    "deviceId":"5fa45c8f0abd0a30caa181af"
+}
+
+###
+GET https://cow-api-services.herokuapp.com/api/thermometer HTTP/1.1
+
+###
+
+POST https://cow-api-services.herokuapp.com/api/thermometer HTTP/1.1
+content-type: application/json
+
+{
+    "C":22,
+    "K":231,
+    "F":124,
+    "deviceId":"5fa45c8f0abd0a30caa181af"
+}

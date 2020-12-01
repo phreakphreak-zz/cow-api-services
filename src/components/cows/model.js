@@ -5,7 +5,6 @@ const cowSchema = new Schema(
     //marca
     brand: {
       type: String,
-      required: true,
     },
     //edad
     ageMonth: {
@@ -37,17 +36,14 @@ const cowSchema = new Schema(
     //raza
     race: {
       type: String,
-      required: true,
     },
     //genero
     gender: {
       type: String,
-      required: true,
     },
     //estado
     state: {
       type: String,
-      required: true,
     },
   },
   {
