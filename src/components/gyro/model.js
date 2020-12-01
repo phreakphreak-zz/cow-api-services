@@ -7,10 +7,14 @@ const gyroSchema = new Schema(
       deviceId: {
         type:String
       },
-      values: {
+      axes: {
         type:Map,
         of:Number,
       },
+      angles:{
+        type:Map,
+        of:Object
+      }
     },
   },
   {

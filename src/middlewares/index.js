@@ -1,7 +1,13 @@
+const morgan = require("morgan");
+const middlewares = {};
 
-const morgan = require('morgan');
-const httpRequest = morgan("dev");
+middlewares.error404 = async (req, res, next) => {
+  res.status(404).json({ message: "not found" });
+};
+middlewares.error500 = async (req, res, next) => {
+  res.status(500).json({ messag: "server error internal" });
+};
 
-module.exports = {
-    httpRequest
-}
+middlewares.httpRequest = morgan("dev");
+
+module.exports = middlewares;

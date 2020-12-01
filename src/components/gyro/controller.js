@@ -10,7 +10,7 @@ const Gyro = require("./model");
 gyroController.getData = async (req, res, next) => {
   try {
     const data = await Gyro.find();
-    if (Object.keys(data).length === 0 ) {
+    if (Object.keys(data).length === 0) {
       throw new Error("data is not available");
     }
     res.status(200).json(data);
@@ -54,15 +54,20 @@ gyroController.getDataById = async (req, res, next) => {
  */
 gyroController.setData = async (req, res, next) => {
   try {
+    if (Object.keys(req.body).length === 0) {
+      throw "body without params";
+    }
     const { x, y, z, pitch, roll, yaw, deviceId } = req.body;
 
     const newGyro = new Gyro({
       data: {
         deviceId: deviceId,
-        values: {
+        axes: {
           x: x,
           y: y,
           z: z,
+        },
+        angles: {
           pitch: pitch,
           roll: roll,
           yaw: yaw,

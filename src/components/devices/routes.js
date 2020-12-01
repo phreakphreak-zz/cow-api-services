@@ -3,13 +3,14 @@ const router = Router();
 const {
   createDevice,
   getDevices,
+  getDeviceById
 } = require("./controller");
 
 router.get("/", getDevices);
 
 router.post("/", createDevice);
 
-router.get("/:id");
+router.get("/:id",getDeviceById);
 
 router.post("/:id");
 

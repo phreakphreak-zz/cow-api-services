@@ -54,6 +54,9 @@ thermometerController.getDataById = async (req, res, next) => {
  */
 thermometerController.setData = async (req, res, next) => {
   try {
+    if (Object.keys(req.body).length === 0) {
+      throw "body without params";
+    }
     const { C, F, K, deviceId } = req.body;
 
     const newThermometer = new Thermometer({

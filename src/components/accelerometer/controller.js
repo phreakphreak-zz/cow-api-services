@@ -54,6 +54,9 @@ accelerometerController.getDataById = async (req, res, next) => {
  */
 accelerometerController.setData = async (req, res, next) => {
   try {
+    if (Object.keys(req.body).length === 0) {
+      throw "body without params";
+    }
     const {
       x,
       y,

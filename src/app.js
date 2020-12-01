@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const path = require("path");
-const { httpRequest } = require("./middlewares/index");
+const { httpRequest,error404,error500 } = require("./middlewares/index");
 
 //settings
 app.set("port", process.env.PORT || 3000);
@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 //routes
 app.use("/api", require("./routes/index"));
 
+// error handler
+app.use(error404);
 
 
 module.exports = app;
