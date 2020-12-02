@@ -1,11 +1,25 @@
 const { Router } = require("express");
 const router = Router();
-const { getData, setData, getDataById } = require("./controller");
+const {
+  createModelIA,
+  getDataIA,
+  convertTensorIA,
+  trainModelIA,
+  generateModelIA,
+  deleteModelIA,
+  getDataApi,
+  setDataApi,
+  getDataApiById,
+} = require("./controller");
 
-router.get("/", getData);
+router.get("/model", createModelIA, generateModelIA);
 
-router.post("/", setData);
+router.delete("/model", deleteModelIA);
 
-router.get("/:id", getDataById);
+router.get("/", getDataApi);
+
+router.post("/", setDataApi);
+
+router.get("/:id", getDataApiById);
 
 module.exports = router;

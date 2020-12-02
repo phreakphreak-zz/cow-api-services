@@ -2,6 +2,27 @@
 GET https://cow-api-services.herokuapp.com/api/devices HTTP/1.1
 
 ###
+GET https://cow-api-services.herokuapp.com/api/devices/5fc6afb284ac0a75fa98d18d HTTP/1.1
+
+###
+POST https://cow-api-services.herokuapp.com/api/devices HTTP/1.1
+Content-Type: application/json
+
+{
+    "number":1,
+    "board": "Wemos D1",
+    "moduleWifi": "ESP8266",
+    "macAddress": "84:0D:8E:A3:B1:EA",
+    "thermometer": "LM35",
+    "accelerometer": "MPU6050"
+}
+
+###
+GET https://cow-api-services.herokuapp.com/api/devices/asd HTTP/1.1
+###
+GET https://cow-api-services.herokuapp.com/api/devices/5fa45c8f0abd0a30caa181af HTTP/1.1
+
+###
 GET https://cow-api-services.herokuapp.com/api/accelerometer HTTP/1.1
 
 ###
@@ -32,12 +53,13 @@ POST https://cow-api-services.herokuapp.com/api/gyro HTTP/1.1
 content-type: application/json
 
 {
+
     "x":1,
     "y":1,
     "z":1,
-    "pitch":1,
-    "roll":1,
-    "yaw":1,
+    "pitch":{"rate":1},
+    "roll":{"rate":1},
+    "yaw":{"rate":1},
     "deviceId":"5fa45c8f0abd0a30caa181af"
 }
 
@@ -55,3 +77,27 @@ content-type: application/json
     "F":124,
     "deviceId":"5fa45c8f0abd0a30caa181af"
 }
+
+###
+GET https://cow-api-services.herokuapp.com/api/cows HTTP/1.1
+
+###
+GET https://cow-api-services.herokuapp.com/api/cows/5fa0697d2849ad2f2ee3e2a8 HTTP/1.1
+
+
+###
+POST https://cow-api-services.herokuapp.com/api/cows HTTP/1.1
+content-Type: application/json
+
+{
+    "brand":"chavez",
+    "ageMonth":"10",
+    "number":"6",
+    "entryDate":"2020-11-01T04:00:00.000Z",
+    "startingWeight":"320.56",
+    "race":"nelore",
+    "gender":"female",
+    "state":"good"
+}
+###
+DELETE  https://cow-api-services.herokuapp.com/api/cows HTTP/1.1
