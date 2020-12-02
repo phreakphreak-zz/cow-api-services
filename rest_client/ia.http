@@ -1,0 +1,14 @@
+###
+GET http://localhost:3000/api/accelerometer/model HTTP/1.1
+
+
+###
+DELETE  http://localhost:3000/api/accelerometer/model HTTP/1.1
+
+###
+GET http://localhost:3000/api/thermometer/model HTTP/1.1
+
+
+###
+DELETE  http://localhost:3000/api/thermometer/model HTTP/1.1
+
